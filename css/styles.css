@@ -87,7 +87,7 @@ body {
 /* Catalog filters */
 
 .main-header {
-  background-image: url(/images/background/catalog-background.jpg);
+  background-image: url(./images/background/catalog-background.jpg);
   background-size: cover;
   color: #ffffff;
 }
@@ -182,7 +182,7 @@ body {
 .subscribe-primary {
   color: #ffffff;
   background-color: #83b3d3;
-  background-image: url(/images/background/background.jpg);
+  background-image: url(./images/background/background.jpg);
   background-size: cover;
 }
 
