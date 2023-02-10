@@ -9,7 +9,7 @@
 
 <body>
   <header class="page-header">
-    <nav class="header-navigation">
+    <nav class="navigation">
 
       <a href="index.html" class="logo">
         <img src="images/logo.svg" width="139px" height="70px" alt="Седона">
@@ -28,31 +28,29 @@
           <a class="navigation-link navigation-link-current" href="catalog.html">Гостиницы</a>
         </li>
       </ul>
-    </nav>
 
-    <nav class="navigation">
-      <ul class="navigation_additional">
-        <li class="navigation_additional-item">
-          <a class="navigation_additional-button" href="#">
+      <ul class="navigation-user">
+        <li class="navigation-user-item">
+          <a class="navigation-link" href="#">
             <span class="visually-hidden">Поиск</span>
           </a>
         </li>
 
-        <li class="navigation_additional-item">
-          <a class="navigation_additional-button" href="#">
+        <li class="navigation-user-item">
+          <a class="navigation-user-button" href="#">
             <span class="visually-hidden">Избранное</span>
-            <span class="navigation_additional-button-counter">12</span>
+            <span class="navigation-user-button-counter">12</span>
           </a>
         </li>
 
-        <li class="navigation_additional-item">
+        <li class="navigation-user-item">
           <a class="button button-secondary" href="#">Хочу сюда!</a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-inner">
+  <main class="main-container main-inner">
     <div class="main-header">
       <header class="inner-header">
         <h1 class="inner-header-title">Гостиницы Седоны</h1>
@@ -61,15 +59,15 @@
             <a class="breadcrumbs-link" href="index.html">Главная</a>
           </li>
           <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link">Каталог</a>
+            <a class="breadcrumbs-link">Гостиницы</a>
           </li>
         </ul>
       </header>
 
       <section class="catalog-filters">
-        <h2 class="section-title">Фильтр списка гостиниц</h2>
+        <!-- Временно hidden -->
+        <h2 class="section-title visually-hidden" hidden>Фильтр списка гостиниц</h2>
         <form class="filters-form" action="https://echo.htmlacademy.ru/" method="post">
-
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Инфраструктура:</legend>
             <ul class="catalog-filter-list">
@@ -105,14 +103,14 @@
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="hotel" checked>
-                  <span class="control-mark"></span>
+                  <!-- <span class="control-mark"></span> -->
                   <span class="control-label">Гостиница</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="motel">
-                  <span class="control-mark"></span>
+                  <!-- <span class="control-mark"></span> -->
                   <span class="control-label">Мотель</span>
                 </label>
               </li>
@@ -120,7 +118,7 @@
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="apartments">
-                  <span class="control-mark"></span>
+                  <!-- <span class="control-mark"></span> -->
                   <span class="control-label">Апартаменты</span>
                 </label>
               </li>
@@ -128,7 +126,7 @@
 
           </fieldset>
 
-          <fieldset class="catalog-filter-group">
+          <fieldset class="catalog-filter-price">
             <legend class="catalog-filter-title">Стоимость, ₽:</legend>
 
             <label class="catalog-filter-label">
@@ -151,16 +149,19 @@
 
           </fieldset>
 
-          <button class="catalog-filters-submit" type="submit">Применить</button>
-          <button class="catalog-filter-clear" type="reset">Сбросить</button>
+          <div class="catalog-filter-buttons">
+            <button class="catalog-filter-submit" type="submit">Применить</button>
+            <button class="catalog-filter-clear" type="reset">Сбросить</button>
+          </div>
 
         </form>
       </section>
     </div>
 
     <section class="found-hotels-sorting">
-      <h2 class="section-title visually-hidden">Сортировка гостиниц</h2>
-      <p class="section-title">Найдено гостиниц: 38</p>
+      <!-- Временно hidden -->
+      <h2 class="section-title visually-hidden" hidden>Сортировка гостиниц</h2>
+      <p class="section-title catalog-title">Найдено гостиниц: 38</p>
       <form class="sorting-types" action="https://echo.htmlacademy.ru/" method="post">
         <label class="sorting-types-label">
           <select class="select-control" id="sorting" name="sorting">
@@ -169,24 +170,24 @@
             <option value="popular">Популярные</option>
           </select>
         </label>
-        <button class="visually-hidden" type="submit">Отсортировать</button>
+        <!-- Временно hidden -->
+        <button class="visually-hidden" type="submit" hidden>Отсортировать</button>
       </form>
 
-      <details class="select-menu">
-        <summary class="select-item select-item-active">Показать карточки</summary>
-        <ul class="select-menu">
-          <li class="select-item">
-            <a class="button" href="#"><span class="visually-hidden">Показать одну карточку</span></a>
-          </li>
-          <li class="select-item">
-            <a class="button" href="#"><span class="visually-hidden">Показать списком</span></a>
-          </li>
-        </ul>
-      </details>
+      <ul class="select-menu">
+        <li class="select-item">
+          <a class="button-sort active" href=""><span class="visually-hidden">Карточками</span></a>
+        </li>
+        <li class="select-item">
+          <a class="button-sort" href="#"><span class="visually-hidden">Слайдами</span></a>
+        </li>
+        <li class="select-item">
+          <a class="button-sort" href="#"><span class="visually-hidden">Списком</span></a>
+        </li>
+      </ul>
     </section>
-
     <section class="hotel-cards">
-      <h2>Результаты</h2>
+      <h2 class="section-title v">Результаты</h2>
       <h3 class="visually-hidden">Список гостиниц</h3>
 
       <article class="hotel-card">
@@ -272,56 +273,59 @@
       <div class="pagination">
         <button class="button button-large">Загрузить ещё</button>
 
-        <h3 class="visually-hidden">Список страниц</h3>
-        <ul class="pagination-item">
-          <a class="pagination-link pagination-current" href="#">1</a>
-        </ul>
-        <ul class="pagination-item">
-          <a class="pagination-link" href="#">2</a>
-        </ul>
-        <ul class="pagination-item">
-          <a class="pagination-link" href="#">3</a>
-        </ul>
-        <ul class="pagination-item">
-          <a class="pagination-link" href="#">4</a>
-        </ul>
-        <ul class="pagination-item">
-          <a class="pagination-link" href="#">...</a>
-        </ul>
-        <ul class="pagination-item">
-          <a class="pagination-link" href="#">10</a>
-        </ul>
+        <div class="pagination-nav">
+          <h3 class="visually-hidden">Список страниц</h3>
+          <ul class="pagination-item">
+            <a class="pagination-link pagination-current" href="#">1</a>
+          </ul>
+          <ul class="pagination-item">
+            <a class="pagination-link" href="#">2</a>
+          </ul>
+          <ul class="pagination-item">
+            <a class="pagination-link" href="#">3</a>
+          </ul>
+          <ul class="pagination-item">
+            <a class="pagination-link" href="#">4</a>
+          </ul>
+          <ul class="pagination-item">
+            <a class="pagination-link" href="#">...</a>
+          </ul>
+          <ul class="pagination-item">
+            <a class="pagination-link" href="#">10</a>
+          </ul>
 
-        <div class="pagination-select">
-          <p>Гостиниц на странице: 4</p>
 
-          <details class="select">
-            <summary class="select-button">4</summary>
+          <div class="pagination-select">
+            <p>Гостиниц на странице: 4</p>
 
-            <ul class="select-menu">
-              <li class="select-item select-item-active">
-                <a class="select-option" href="#">4</a>
-              </li>
-            </ul>
+            <details class="select">
+              <summary class="select-button">4</summary>
 
-            <ul class="select-menu">
-              <li class="select-item">
-                <a class="select-option" href="#">5</a>
-              </li>
-            </ul>
+              <ul class="select-menu">
+                <li class="select-item select-item-active">
+                  <a class="select-option" href="#">4</a>
+                </li>
+              </ul>
 
-            <ul class="select-menu">
-              <li class="select-item">
-                <a class="select-option" href="#">6</a>
-              </li>
-            </ul>
+              <ul class="select-menu">
+                <li class="select-item">
+                  <a class="select-option" href="#">5</a>
+                </li>
+              </ul>
 
-            <ul class="select-menu">
-              <li class="select-item">
-                <a class="select-option" href="#">9</a>
-              </li>
-            </ul>
-          </details>
+              <ul class="select-menu">
+                <li class="select-item">
+                  <a class="select-option" href="#">6</a>
+                </li>
+              </ul>
+
+              <ul class="select-menu">
+                <li class="select-item">
+                  <a class="select-option" href="#">9</a>
+                </li>
+              </ul>
+            </details>
+          </div>
         </div>
       </div>
     </section>
