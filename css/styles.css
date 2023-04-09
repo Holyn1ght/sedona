@@ -48,6 +48,7 @@ body {
   font-style: normal;
   font-size: 18px;
   background-color: #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 .main-container {
@@ -62,8 +63,9 @@ body {
 
 .button {
   display: inline-block;
-  padding: 9px 34px;
+  padding: 9px 15px 8px;
   font-family: "PT Sans", "Arial", sans-serif;
+  text-align: center;
   background-color: #83b3d3;
   color: #ffffff;
   font-size: 16px;
@@ -86,6 +88,38 @@ body {
   font-weight: 700;
   padding: 17px;
   border-radius: 10px;
+}
+
+.button-navigation-user {
+  min-width: 160px;
+}
+
+.button:hover {
+  background-color: rgba(104, 162, 202, 1);
+}
+
+.button.pagination-link:focus:not(:active) {
+  background-color: rgba(104, 162, 202, 1);
+  outline: 3px solid #756257;
+}
+
+.button:active {
+  background-color: rgba(104, 162, 202, 1);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-secondary:hover {
+  background-color: rgba(97, 80, 72, 1);
+}
+
+.button-secondary.pagination-link:focus:not(:active) {
+  outline: 3px solid #83b3d3;
+  background-color: rgba(97, 80, 72, 1);
+}
+
+.button-secondary:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(97, 80, 72, 1);
 }
 
 /* Header */
@@ -147,14 +181,28 @@ body {
   padding: 0;
 }
 
-.social-item {
-  min-width: 18px;
-  min-height: 15px;
-  margin-right: 30px;
+.social-link {
+  display: flex;
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  align-items: center;
+  fill: #83b3d3;
+  border-radius: 10px;
 }
 
-.social-item:last-child {
-  margin-right: 0;
+.social-link:hover {
+  fill: #68a2ca;
+}
+
+.social-link:focus:not(:active) {
+  fill: #68a2ca;
+  outline: 3px solid #83b3d3;
+  outline-offset: -2px;
+}
+
+.social-link:active {
+  fill: rgba(104, 162, 202, 0.3);
 }
 
 .contacts-phone {
@@ -162,6 +210,35 @@ body {
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
+  padding: 15px;
+}
+
+.contacts-phone:hover {
+  color: #756257;
+}
+.contacts-phone:focus:not(:active) {
+  color: #756257;
+  outline: 3px solid #83b3d3;
+  border-radius: 10px;
+}
+.contacts-phone:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+
+.academy-logo {
+  padding: 15px;
+}
+
+.academy-logo:hover {
+  fill: #756257;
+}
+.academy-logo:focus:not(:active) {
+  fill: #756257;
+  outline: 3px solid #83b3d3;
+  border-radius: 10px;
+}
+.academy-logo:active {
+  fill: rgba(117, 98, 87, 0.3);
 }
 
 /* Navigation */
@@ -209,11 +286,35 @@ body {
   text-align: center;
 }
 
+.navigation-item-active {
+  position: relative;
+}
+
+.navigation-item-active::after {
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  background-color: #756257;
+}
+
+.navigation-link:hover {
+  color: #756257;
+  fill: #756257;
+}
+
+.navigation-link:active {
+  color: rgba(117, 98, 87, 0.3);
+  fill: rgba(117, 98, 87, 0.3);
+}
+
 .navigation-user-item:last-child {
   margin-left: 15px;
 }
 
-.navigation-user-item:nth-child(2) .navigation-link::after {
+.favourites::after {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,11 +330,16 @@ body {
   margin-bottom: 17px;
 }
 
+.favourites:active::after {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /* Main */
 
 .main-promo {
   background-repeat: no-repeat;
-  background-image: url(/images/decorate/divider.svg), url(/images/decorate/welcome.svg), url(/images/background/main-promo.jpg);
+  background-image: url(/images/decorate/divider.svg),
+    url(/images/decorate/welcome.svg), url(/images/background/main-promo.jpg);
   background-position: 50% 100%, 50% 50%;
   background-color: #83b3d3;
   min-height: 485px;
@@ -350,20 +456,118 @@ body {
 /* Catalog sort */
 
 .found-hotels-sorting {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
   margin-bottom: 56px;
+  /* grid-template-columns: 50% 1fr 160px; */
+  grid-template-columns: 347px 287px 1fr;
+  gap: 80px;
+  padding: 0 71px;
 }
 
 .catalog-title {
   margin: 0;
-  width: 50%;
+}
+
+.catalog-view {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  margin-left: auto;
+}
+
+.catalog-select {
+  width: 287px;
+  height: 48px;
+  z-index: 1;
+  position: relative;
+}
+
+.select-button {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  list-style-type: none;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  padding-left: 19px;
+  border: 2px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.select-button:hover {
+  border: 2px solid #83b3d3;
+}
+.select-button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.select-button::after {
+  content: "";
+  background: url(/images/decorate/select-arrow.svg) no-repeat 50% 50%;
+}
+
+.select[open] .select-button::after {
+  transform: rotate(180deg);
 }
 
 .select-menu {
   list-style-type: none;
-  display: flex;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  left: 0;
+  right: 0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.select-item:hover {
+  background-color: #f2f2f2;
+}
+
+.select-item-active,
+.select-item-active:hover {
+  background-color: #e6e6e6;
+}
+
+.select-option {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  z-index: 1;
+  padding: 8px 19px;
+}
+
+.view-link {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: no-repeat 50% 50%;
+  border: 2px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.view-link:hover,
+.view-link.pagination-link:focus:not(:active) {
+  border: 2px solid #83b3d3;
+}
+
+.view-item-active .view-link {
+  border-color: #000000;
+}
+
+.view-link-cards {
+  background-image: url(/images/decorate/view-cards.svg);
+}
+
+.view-link-slides {
+  background-image: url(/images/decorate/view-slides.svg);
+}
+
+.view-link-list {
+  background-image: url(/images/decorate/view-list.svg);
 }
 
 /* Cards */
@@ -371,6 +575,10 @@ body {
 .hotel-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  column-gap: 18px;
+  row-gap: 10px;
+  padding-bottom: 34px;
+  border-bottom: 2px solid #e6e6e6;
 }
 
 .hotel-card {
@@ -388,6 +596,9 @@ body {
 .hotel-card-img {
   margin: 0;
   margin-bottom: 16px;
+  /* width: 100%;
+  height: 100%; */
+  object-fit: fill;
 }
 
 .hotel-title {
@@ -423,8 +634,48 @@ body {
 
 .card-rate {
   grid-area: rate;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  min-width: 160px;
+  justify-self: end;
+  text-align: center;
   margin: 0;
+  padding: 9px 8px 7px;
   text-transform: uppercase;
+}
+
+.card-button-active {
+  background-color: #7db54f;
+}
+
+.star {
+  grid-area: stars;
+  margin: 0;
+  background-image: url(/images/decorate/star.svg);
+  background-repeat: repeat-x;
+  min-height: 37px;
+  background-size: 23px 17px;
+  background-position: 0 50%;
+}
+
+.star-1 {
+  width: 23px;
+}
+
+.star-2 {
+  width: 46px;
+}
+
+.star-3 {
+  width: 69px;
+}
+
+.star-4 {
+  width: 92px;
+}
+
+.star-5 {
+  width: 115px;
 }
 
 /* Advantages */
@@ -592,13 +843,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding: 0;
+  padding-top: 30px;
 }
 
 .pagination-nav {
   display: flex;
   width: 100%;
-  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #e6e6e6;
 }
 
 .pagination-list {
@@ -629,7 +882,21 @@ body {
   text-decoration: none;
 }
 
-.pagination-current {
+.pagination-link:hover {
+  background-color: #68a2ca;
+}
+
+.pagination-link.pagination-link:focus:not(:active):not(:active) {
+  background-color: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.pagination-link:active {
+  background-color: #68a2ca;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.pagination-current .pagination-link {
   background-color: #f2f2f2;
   color: #000000;
 }
@@ -645,14 +912,23 @@ body {
   margin: auto 0;
 }
 
-.pagination > .button {
+.pagination-button {
   min-width: 620px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.pagination-select {
+  height: 48px;
+  min-width: 160px;
+  z-index: 1;
+  position: relative;
 }
 
 /* Subscribe */
 
 .subscribe {
-  padding: 94px 240px;
+  padding: 73px 240px 141px;
   text-align: center;
 }
 
@@ -689,4 +965,14 @@ body {
   padding: 8px 20px;
   border: 2px solid transparent;
   height: 60px;
+  background-color: #f2f2f2;
+}
+
+.field-input.pagination-link:focus:not(:active) {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.field-input:hover {
+  background-color: #e6e6e6;
 }
