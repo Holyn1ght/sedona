@@ -64,7 +64,14 @@
         <h1 class="inner-header-title">Гостиницы Седоны</h1>
         <ul class="breadcrumbs">
           <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link" href="index.html">Главная</a>
+            <a class="breadcrumbs-link" href="index.html">
+              <span class="visually-hidden">Главная</span>
+              <svg width="12" height="12" viewBox="0 0 12 12">
+                <path d="M6 0.300003L0 5.8V12H12V5.8L6 0.300003ZM11 11H1V6.2L6 1.7L11 6.2V11Z" />
+                <path d="M4 10H5V7.5H7V10H8V6.5H4V10Z" />
+              </svg>
+
+            </a>
           </li>
           <li class="breadcrumbs-item">
             <a class="breadcrumbs-link">Гостиницы</a>
@@ -73,7 +80,6 @@
       </header>
 
       <section class="catalog-filters">
-        <!-- Временно hidden -->
         <h2 class="section-title visually-hidden" hidden>Фильтр списка гостиниц</h2>
         <form class="filters-form" action="https://echo.htmlacademy.ru/" method="post">
           <fieldset class="catalog-filter-group">
@@ -111,14 +117,14 @@
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="hotel" checked>
-                  <!-- <span class="control-mark"></span> -->
+                  <span class="control-mark"></span>
                   <span class="control-label">Гостиница</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="motel">
-                  <!-- <span class="control-mark"></span> -->
+                  <span class="control-mark"></span>
                   <span class="control-label">Мотель</span>
                 </label>
               </li>
@@ -126,7 +132,7 @@
               <li class="catalog-filter-item">
                 <label class="control">
                   <input class="visually-hidden control-input" type="radio" name="group-radio" value="apartments">
-                  <!-- <span class="control-mark"></span> -->
+                  <span class="control-mark"></span>
                   <span class="control-label">Апартаменты</span>
                 </label>
               </li>
@@ -137,23 +143,25 @@
           <fieldset class="catalog-filter-price">
             <legend class="catalog-filter-title">Стоимость, ₽:</legend>
 
-            <label class="catalog-filter-label">
-              <span class="range-title">от</span>
-              <input class="catalog-filter-input" name="min-price" type="number" value="0">
-            </label>
+              <label class="catalog-filter-label">
+                <span class="range-title">от</span>
+                <input class="catalog-filter-input" name="min-price" type="number" value="0">
+              </label>
+              <label class="catalog-filter-label">
+                <span class="range-title">до</span>
+                <input class="catalog-filter-input" name="max-price" type="number" value="9000">
+              </label>
 
-            <label class="catalog-filter-label">
-              <span class="range-title">до</span>
-              <input class="catalog-filter-input" name="max-price" type="number" value="9000">
-            </label>
-
-            <button class="range-toggle toggle-min" type="button">
-              <span class="visually-hidden">Изменить минимальную цену</span>
-            </button>
-
-            <button class="range-toggle toggle-max" type="button">
-              <span class="visually-hidden">Изменить максимальную цену</span>
-            </button>
+            <div class="range-scale">
+              <div class="range-bar" style="left: 0px; right: 60px;">
+                <button class="range-toggle toggle-min" type="button">
+                  <span class="visually-hidden">Изменить минимальную цену</span>
+                </button>
+                <button class="range-toggle toggle-max" type="button">
+                  <span class="visually-hidden">Изменить максимальную цену</span>
+                </button>
+              </div>
+            </div>
 
           </fieldset>
 
@@ -306,22 +314,22 @@
             <p>Гостиниц на странице: </p>
 
             <details class="select pagination-select">
-              <summary class="select-button">4</summary>
+              <summary class="select-button">4</su mmary>
 
-              <ul class="select-menu">
-                <li class="select-item select-item-active">
-                  <a class="select-option" href="#">4</a>
-                </li>
-                <li class="select-item">
-                  <a class="select-option" href="#">5</a>
-                </li>
-                <li class="select-item">
-                  <a class="select-option" href="#">6</a>
-                </li>
-                <li class="select-item">
-                  <a class="select-option" href="#">9</a>
-                </li>
-              </ul>
+                <ul class="select-menu">
+                  <li class="select-item select-item-active">
+                    <a class="select-option" href="#">4</a>
+                  </li>
+                  <li class="select-item">
+                    <a class="select-option" href="#">5</a>
+                  </li>
+                  <li class="select-item">
+                    <a class="select-option" href="#">6</a>
+                  </li>
+                  <li class="select-item">
+                    <a class="select-option" href="#">9</a>
+                  </li>
+                </ul>
             </details>
           </div>
         </div>
