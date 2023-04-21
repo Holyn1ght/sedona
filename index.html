@@ -204,6 +204,69 @@
       <span class="visually-hidden">Макет разработан HTML Academy</span>
     </a>
   </footer>
+
+  <div class="modal-container" style="display: none;">
+    <div class="modal modal-book">
+      <button class="modal-close-button"><span class="visually-hidden">Закрыть</span></button>
+      <section class="modal-content">
+        <h2 class="popover-title">Поиск гостиницы в Седоне</h2>
+
+        <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+
+          <div class="search-form-date">
+            <label class="field-title" for="check-in-date">Дата заезда:</label>
+            <input class="search-input" type="text" id="check-in-date" name="check-in-date" placeholder="Укажите дату"
+              value="27 апреля 2020">
+            <span class="search-description search-error">Мы не можем отправить вас в прошлое.</span>
+          </div>
+
+          <div class="search-form-date">
+            <label class="field-title" for="check-out-date">Дата выезда:</label>
+            <input class="search-input" type="text" id="check-out-date" name="check-out-date" placeholder="Укажите дату"
+              value="1 сентября 2021">
+            <span class="search-description">На эти даты есть свободные номера. Пока есть.</span>
+          </div>
+
+          <div class="search-form-amount">
+            <label class="field-title" for="guest-count">Взрослые:</label>
+            <div class="field-number number">
+              <button class="number-button number-minus" type="button">
+                <span class="visually-hidden">Уменьшить количество взрослых</span>
+              </button>
+              <input class="number-input field-input" type="number" id="guest-count" name="guest-count" placeholder="0"
+                value="2">
+              <button class="number-button number-plus" type="button">
+                <span class="visually-hidden">Увеличить количество взрослых</span>
+              </button>
+            </div>
+          </div>
+          <div class="search-form-amount">
+            <span class="field-title field-title-info">
+              <label class="modal-title" for="children-count">Дети:</label>
+              <span class="field-info">
+                <span class="visually-hidden">Информация о размещении детей</span>
+                <span class="info-text" style="">Укажите количество детей, которые будут с вами, возраст которых от 6 до
+                  18 лет. Дети до 6 лет размещаются бесплатно.</span>
+              </span>
+            </span>
+            <div class="field-number number">
+              <button class="number-button number-minus" type="button">
+                <span class="visually-hidden">Уменьшить количество взрослых</span>
+              </button>
+              <input class="number-input field-input" type="number" id="children-count" name="children-count"
+                placeholder="0" value="2">
+              <button class="number-button number-plus" type="button">
+                <span class="visually-hidden">Увеличить количество взрослых</span>
+              </button>
+            </div>
+          </div>
+
+
+          <button type="submit" class="button button-large modal-book-button">Найти</button>
+        </form>
+      </section>
+    </div>
+  </div>
 </body>
 
 </html>
